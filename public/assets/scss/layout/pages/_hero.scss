@@ -16,20 +16,9 @@
 }
 .tp-hero{
     &-left-wrapper{
-        padding-top: 255px;
-        padding-bottom: 180px;
+        padding-top: 120px;
+        padding-bottom: 0;
         margin-right: -110px;
-        @media #{$lg}{
-            padding-top: 220px;
-        }
-        @media #{$md}{
-            padding-top: 170px;
-            padding-bottom: 40px;
-        }
-        @media #{$xs}{
-            padding-top: 150px;
-            padding-bottom: 70px;
-        }
     }
     &-content{
         padding-right: 80px;
@@ -103,6 +92,16 @@
         & img{
             mix-blend-mode: hard-light;
             max-width: 100%;
+            transform: scale(1.10);
+            transform-origin: bottom center;
+
+            @media #{$lg}{
+                transform: scale(1.05);
+            }
+
+            @media #{$md,$xs}{
+                transform: none;
+            }
         }
 
         &-shape{
@@ -124,15 +123,6 @@
         }
         &-wrapper{
             isolation: isolate;
-            transform: translateY(-220px);
-
-            @media #{$lg}{
-                transform: translateY(-170px);
-            }
-
-            @media #{$md,$xs}{
-                transform: none;
-            }
         }
     }
     &-app-icon{

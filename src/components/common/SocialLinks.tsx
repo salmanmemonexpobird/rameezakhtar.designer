@@ -15,7 +15,7 @@ interface HeroDataType {
 const hero_social_data: HeroDataType[] = [
   {
     id: 1,
-    link: "https://mail.google.com",
+    link: "mailto:rameezakhtar24@gmail.com",
     icon: <HeroEmailIcon />,
   },
   {
@@ -37,7 +37,8 @@ export const HeroSocialLinks = () => {
         <Link
           key={h_index}
           href={h_item.link}
-          target="_blank">
+          target={h_item.link.startsWith("mailto:") ? undefined : "_blank"}
+          rel={h_item.link.startsWith("mailto:") ? undefined : "noopener noreferrer"}>
           {h_item.icon}
         </Link>
       ))}
