@@ -76,7 +76,7 @@ export const cursorTest = async () => {
           duration: 0.3,
           x: ((relX - boundingRect.width / 2) / boundingRect.width) * movement,
           y: ((relY - boundingRect.height / 2) / boundingRect.height) * movement,
-          ease: Power2.easeOut
+          ease: "power2.out"
         });
       }
     

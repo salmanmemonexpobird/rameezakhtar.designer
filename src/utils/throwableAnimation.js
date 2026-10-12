@@ -1,5 +1,6 @@
 import jQuery from 'jquery';
 import Matter from '../../public/assets/plugins/matter.js';
+import { Gsap as gsap } from '@/plugins';
 
 
 export const throwableAnimation = async () => {

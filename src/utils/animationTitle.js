@@ -71,7 +71,11 @@ const animationTitle = () => {
   }
 
   // title animation for home 05
-  if (typeof window !== "undefined") {
+  if (
+    typeof window !== "undefined" &&
+    document.querySelector('.tp-project-5-2-area') &&
+    document.querySelector('.tp-project-5-2-title')
+  ) {
     let project_text = gsap.timeline({
       scrollTrigger: {
         trigger: ".tp-project-5-2-area",

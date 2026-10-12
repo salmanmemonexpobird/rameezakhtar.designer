@@ -19,9 +19,17 @@ const blogAnimation = () => {
 
     const mm = gsap.matchMedia();
     mm.add('(min-width: 991px)', () => {
-      addStickyAnimation('.tp-blog-sidebar-sticky', 'top 8%', 'bottom 115%');
+      if (
+        document.querySelector('.tp-blog-sidebar-sticky') &&
+        document.querySelector(sidebarStickyTrigger)
+      ) {
+        addStickyAnimation('.tp-blog-sidebar-sticky', 'top 8%', 'bottom 115%');
+      }
 
-      if (document.querySelector('.tp-blog-social-sticky')) {
+      if (
+        document.querySelector('.tp-blog-social-sticky') &&
+        document.querySelector(socialStickyTrigger)
+      ) {
         addStickyAnimation('.tp-blog-social-sticky', 'top 10%', 'bottom bottom');
       }
     });

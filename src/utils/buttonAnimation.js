@@ -47,14 +47,14 @@ export function buttonAnimation () {
           gsap.to(target, 0.5, {
             x: ((relX - $this.width() / 2) / $this.width()) * movement,
             y: ((relY - $this.height() / 2) / $this.height()) * movement,
-            ease: Power2.easeOut,
+            ease: "power2.out",
           });
         }
         $(btn).mouseleave(function (e) {
           gsap.to(hoverBtnItem[i], 0.5, {
             x: 0,
             y: 0,
-            ease: Power2.easeOut,
+            ease: "power2.out",
           });
         });
       });
