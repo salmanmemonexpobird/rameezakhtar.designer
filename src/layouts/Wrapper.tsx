@@ -5,8 +5,6 @@ import { throwableAnimation } from "@/utils/throwableAnimation";
 import ScrollToTop from "@/components/common/ScrollToTop";
 import { ToastContainer } from "react-toastify";
 import { usePathname } from "next/navigation";
-import { gsap } from "gsap";
- 
 
 import animationTitle from "@/utils/animationTitle";
 import animationTitleChar from "@/utils/animationTitleChar";
@@ -15,18 +13,16 @@ import PortfolioPanel from "@/utils/PortfolioPanel";
 import blogAnimation from "@/utils/blogAnimation";
 import linesAnimation from "@/utils/linesAnimation";
 import { buttonAnimation } from "@/utils/buttonAnimation";
-import { scrollSmother } from "@/utils/scrollSmother";
 import { scrollTextAnimation } from "@/utils/scrollTextAnimation";
 import textInvert from "@/utils/textInvert";
 import ContextProvider from "@/context/app-context";
 
 import {
+  Gsap as gsap,
   ScrollSmoother,
   ScrollTrigger,
-  SplitText,
 } from "@/plugins";
 import AnimateMouse from "@/components/common/animated-mouse";
-gsap.registerPlugin(ScrollSmoother, ScrollTrigger, SplitText);
 
 if (typeof window !== "undefined") {
   require("bootstrap/dist/js/bootstrap");
@@ -45,32 +41,42 @@ const Wrapper = ({ children }: any) => {
   }, []);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      ScrollSmoother.create({
-        smooth: 1.35,
-        effects: true,
-        smoothTouch: false,
-        normalizeScroll: false,
-        ignoreMobileResize: true,
-      });
-    }
+    const smoother = ScrollSmoother.create({
+      smooth: 1.35,
+      effects: true,
+      smoothTouch: false,
+      normalizeScroll: false,
+      ignoreMobileResize: true,
+    });
+
+    return () => smoother.kill();
   }, []);
 
   useEffect(() => {
-    // sticky section
-    if (typeof window !== "undefined") {
-      let mm = gsap.matchMedia();
-      mm.add("(min-width: 1199px)", () => {
-        ScrollTrigger.create({
-          trigger: ".tp-port-3-area",
+    const area = document.querySelector<HTMLElement>(".tp-port-3-area");
+    const pinnedContent = document.querySelector<HTMLElement>(
+      ".tp-port-3-content-left",
+    );
+
+    // This section only exists on portfolio-details-3. Initializing it on
+    // every route caused the missing-element production warnings.
+    if (!area || !pinnedContent) return;
+
+    const mm = gsap.matchMedia();
+    mm.add("(min-width: 1199px)", () => {
+      const trigger = ScrollTrigger.create({
+          trigger: area,
           start: "top -60%",
           end: "bottom 120%",
-          pin: ".tp-port-3-content-left",
+          pin: pinnedContent,
           pinSpacing: false,
-        });
       });
-    }
-  }, []);
+
+      return () => trigger.kill();
+    });
+
+    return () => mm.revert();
+  }, [pathname]);
 
   useEffect(() => {
     throwableAnimation();
@@ -81,7 +87,6 @@ const Wrapper = ({ children }: any) => {
     blogAnimation();
     linesAnimation();
     buttonAnimation();
-    scrollSmother();
     scrollTextAnimation();
     textInvert();
   }, [pathname]);

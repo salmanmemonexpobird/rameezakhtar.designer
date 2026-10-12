@@ -1,20 +1,18 @@
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { SplitText } from "gsap/SplitText";
 
-//  Gsap Plugin import here 
+// All animations must share the same GSAP instance. The previous setup mixed
+// npm GSAP with older plugin files from /public, so production builds could not
+// see ScrollTrigger even though it appeared to be registered.
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+}
 
-export { default as Gsap } from "../../public/assets/plugins/gsap.js";
-export { default as SplitText } from "../../public/assets/plugins/gsap-split-text.js"; 
-export { default as ScrollTrigger } from "../../public/assets/plugins/gsap-scroll-trigger.js";
-export { default as ScrollSmoother } from "../../public/assets/plugins/gsap-scroll-smoother.js";
+export { gsap as Gsap, ScrollTrigger, ScrollSmoother, SplitText };
 
-
-
+// Keep other plugins
 export { default as WebGL } from "../../public/assets/plugins/webgl.js";
 export { default as THREE } from "../../public/assets/plugins/three.js";
-
-
-
-// Chroma
 export { default as chroma } from "../../public/assets/plugins/charming.js";
-
-
-
