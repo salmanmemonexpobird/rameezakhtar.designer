@@ -92,11 +92,11 @@
         & img{
             mix-blend-mode: hard-light;
             max-width: 100%;
-            transform: scale(1.10);
+            transform: scale(1.05);
             transform-origin: bottom center;
 
             @media #{$lg}{
-                transform: scale(1.05);
+                transform: scale(1.02);
             }
 
             @media #{$md,$xs}{
