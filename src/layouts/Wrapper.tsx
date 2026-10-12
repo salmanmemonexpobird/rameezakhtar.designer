@@ -41,16 +41,31 @@ const Wrapper = ({ children }: any) => {
   }, []);
 
   useEffect(() => {
-    const smoother = ScrollSmoother.create({
-      smooth: 1.35,
-      effects: true,
-      smoothTouch: false,
-      normalizeScroll: false,
-      ignoreMobileResize: true,
+    const wrapper = document.querySelector<HTMLElement>("#smooth-wrapper");
+    const content = document.querySelector<HTMLElement>("#smooth-content");
+
+    if (!wrapper || !content) return;
+
+    let smoother: ReturnType<typeof ScrollSmoother.create> | undefined;
+    const frame = window.requestAnimationFrame(() => {
+      ScrollSmoother.get()?.kill();
+      smoother = ScrollSmoother.create({
+        wrapper,
+        content,
+        smooth: 1.35,
+        effects: true,
+        smoothTouch: 0.1,
+        normalizeScroll: false,
+        ignoreMobileResize: true,
+      });
+      ScrollTrigger.refresh();
     });
 
-    return () => smoother.kill();
-  }, []);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      smoother?.kill();
+    };
+  }, [pathname]);
 
   useEffect(() => {
     const area = document.querySelector<HTMLElement>(".tp-port-3-area");

@@ -124,6 +124,15 @@
         }
         &-wrapper{
             isolation: isolate;
+            transform: translateY(-220px);
+
+            @media #{$lg}{
+                transform: translateY(-170px);
+            }
+
+            @media #{$md,$xs}{
+                transform: none;
+            }
         }
     }
     &-app-icon{
