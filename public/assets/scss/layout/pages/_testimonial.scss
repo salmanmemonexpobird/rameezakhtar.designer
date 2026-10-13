@@ -62,6 +62,29 @@
             }
         }
     }
+    &-star{
+        position: relative;
+        display: inline-flex;
+        color: rgba(255, 255, 255, .22) !important;
+
+        & > span:first-child{
+            color: rgba(255, 255, 255, .22) !important;
+        }
+
+        &-fill{
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: inline-flex;
+            overflow: hidden;
+            color: var(--tp-blue-1) !important;
+
+            & span{
+                flex: 0 0 auto;
+                color: var(--tp-blue-1) !important;
+            }
+        }
+    }
     &-content{
         & p{
             font-weight: 400;

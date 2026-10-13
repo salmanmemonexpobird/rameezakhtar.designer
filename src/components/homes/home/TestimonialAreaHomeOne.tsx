@@ -16,7 +16,7 @@ interface DataType {
   info: string;
   testimonial_slider_data: {
     id: number;
-    rating_text: string;
+    rating: number;
     description: string;
   }[];
   testimonial_nav_data: {
@@ -34,17 +34,17 @@ const testimonial_content: DataType = {
   testimonial_slider_data: [
     {
       id: 1,
-      rating_text: "5.0 Rating",
+      rating: 4.8,
       description: `"Rameez has an excellent eye for design and branding. He transformed our ideas into a clean, modern, and professional visual identity that perfectly reflects our brand's personality. Great creativity and attention to detail!"`,
     },
     {
       id: 2,
-      rating_text: "5.0 Rating",
+      rating: 4.6,
       description: `"Working with Rameez was a great experience. His social media designs were creative, engaging, and perfectly aligned with our brand. He consistently delivered high-quality work with fresh ideas."`,
     },
     {
       id: 3,
-      rating_text: "5.0 Rating",
+      rating: 5,
       description: `"Highly impressed with Rameez's creativity and design skills. He understands brand aesthetics, pays attention to the smallest details, and consistently produces premium-quality designs."`,
     },
   ],
@@ -178,15 +178,21 @@ const TestimonialAreaHomeOne = ({ style }: any) => {
                         </div>
                         <div className="tp-testimonial-item-top d-flex align-items-center">
 
-                          <div className="tp-testimonial-rating">
-                            <StartIcon />{' '}
-                            <StartIcon />{' '}
-                            <StartIcon />{' '}
-                            <StartIcon />{' '}
-                            <StartIcon />{' '}
+                          <div className="tp-testimonial-rating" aria-label={`${item.rating.toFixed(1)} out of 5 stars`}>
+                            {[0, 1, 2, 3, 4].map((starIndex) => {
+                              const fill = Math.min(Math.max(item.rating - starIndex, 0), 1) * 100;
+                              return (
+                                <span className="tp-testimonial-star" key={starIndex} aria-hidden="true">
+                                  <StartIcon />
+                                  <span className="tp-testimonial-star-fill" style={{ width: `${fill}%` }}>
+                                    <StartIcon />
+                                  </span>
+                                </span>
+                              );
+                            })}
                           </div>
 
-                          <p>{item.rating_text}</p>
+                          <p>{item.rating.toFixed(1)} Rating</p>
                         </div>
                         <div className="tp-testimonial-content">
                           <p>{item.description}</p>

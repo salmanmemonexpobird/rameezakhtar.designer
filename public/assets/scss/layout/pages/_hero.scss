@@ -1874,17 +1874,17 @@
 }
 .tp-hero-title .tp-hero-typed-line{
     display: block;
-    font-size: .72em;
-    min-height: 1.5em;
-    line-height: 1.5;
+    font-size: .6em;
+    min-height: 1.8em;
+    line-height: 1.8;
     white-space: nowrap;
     background: none;
     -webkit-text-fill-color: initial;
 
     @media #{$xs}{
-        font-size: .62em;
-        min-height: 1.74em;
-        line-height: 1.74;
+        font-size: .52em;
+        min-height: 2.08em;
+        line-height: 2.08;
     }
 }
 .tp-hero-title .tp-hero-typed{

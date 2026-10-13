@@ -41,9 +41,14 @@
                 margin-bottom: 0;
 
                 & img{
-                    width: 64px;
-                    height: 64px;
+                    width: 84px;
+                    height: 84px;
                     object-fit: contain;
+
+                    @media #{$xs}{
+                        width: 72px;
+                        height: 72px;
+                    }
                 }
             }
         }

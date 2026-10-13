@@ -1,8 +1,8 @@
 'use client'
 import React from 'react';
 // skill images
-import photoshopIcon from "@/assets/img/skill/photoshop.png";
-import illustratorIcon from "@/assets/img/skill/ai.png";
+import photoshopIcon from "@/assets/img/hero/shape/hero-photoshop-3d.png";
+import illustratorIcon from "@/assets/img/hero/shape/hero-illustrator-3d.png";
 import capCutIcon from "@/assets/img/hero/shape/hero-capcut-3d.png";
 import canvaIcon from "@/assets/img/skill/canva.svg";
 import Image, { StaticImageData } from 'next/image';
@@ -75,7 +75,7 @@ const SkillAreaHomeOne = () => {
                           className="tp-skill-thumb tp-skill-thumb--icon-only d-flex align-items-center justify-content-center flex-column">
                           <div className="tp-skill-icon">
                             <span>
-                              <Image src={inner_item.img} width={64} height={64} alt={`${inner_item.title} icon`} />
+                              <Image src={inner_item.img} width={84} height={84} alt={`${inner_item.title} icon`} />
                             </span>
                           </div>
                         </div>
