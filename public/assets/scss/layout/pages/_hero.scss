@@ -1874,24 +1874,17 @@
 }
 .tp-hero-title .tp-hero-typed-line{
     display: block;
-    min-height: 1.08em;
-    line-height: 1.08;
+    font-size: .72em;
+    min-height: 1.5em;
+    line-height: 1.5;
     white-space: nowrap;
     background: none;
     -webkit-text-fill-color: initial;
 
-    &.is-long{
-        font-size: .72em;
-        min-height: 1.5em;
-        line-height: 1.5;
-    }
-
     @media #{$xs}{
-        &.is-long{
-            font-size: .62em;
-            min-height: 1.74em;
-            line-height: 1.74;
-        }
+        font-size: .62em;
+        min-height: 1.74em;
+        line-height: 1.74;
     }
 }
 .tp-hero-title .tp-hero-typed{

@@ -114,7 +114,7 @@ const HeroAreaHome = () => {
                   <span className="singleLine">{sub_title} <Image src={HeroHand} alt="waving-hand" /></span>
                   <h3 className="tp-hero-title">
                     <span className="tp-hero-title-line">{title_1}</span>
-                    <span className={`tp-hero-typed-line${typed.length > 14 ? ' is-long' : ''}`}>
+                    <span className="tp-hero-typed-line">
                       <span className="tp-hero-typed">{typed || '​'}</span>
                       <span className="tp-hero-typed-cursor"></span>
                     </span>
