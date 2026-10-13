@@ -51,6 +51,7 @@ const scrollTo = () => {
 
 const HeroAreaHome = () => {
   const [typed, setTyped] = useState('');
+  const [activeWordIndex, setActiveWordIndex] = useState(0);
   useEffect(() => {
     let wordIndex = 0;
     let charIndex = 0;
@@ -67,6 +68,7 @@ const HeroAreaHome = () => {
       } else if (deleting && charIndex === 0) {
         deleting = false;
         wordIndex = (wordIndex + 1) % words.length;
+        setActiveWordIndex(wordIndex);
         delay = 400;
       }
       timer = setTimeout(tick, delay);
@@ -114,7 +116,7 @@ const HeroAreaHome = () => {
                   <span className="singleLine">{sub_title} <Image src={HeroHand} alt="waving-hand" /></span>
                   <h3 className="tp-hero-title">
                     <span className="tp-hero-title-line">{title_1}</span>
-                    <span className="tp-hero-typed-line">
+                    <span className={`tp-hero-typed-line${words[activeWordIndex].length > 14 ? ' is-long' : ''}`}>
                       <span className="tp-hero-typed">{typed || '​'}</span>
                       <span className="tp-hero-typed-cursor"></span>
                     </span>

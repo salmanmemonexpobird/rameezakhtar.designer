@@ -1874,17 +1874,28 @@
 }
 .tp-hero-title .tp-hero-typed-line{
     display: block;
-    font-size: .6em;
-    min-height: 1.8em;
-    line-height: 1.8;
+    font-size: .72em;
+    min-height: 1.5em;
+    line-height: 1.5;
     white-space: nowrap;
     background: none;
     -webkit-text-fill-color: initial;
 
+    &.is-long{
+        width: 122%;
+        transform: scaleX(.82);
+        transform-origin: left center;
+    }
+
     @media #{$xs}{
-        font-size: .52em;
-        min-height: 2.08em;
-        line-height: 2.08;
+        font-size: .62em;
+        min-height: 1.74em;
+        line-height: 1.74;
+
+        &.is-long{
+            width: 133%;
+            transform: scaleX(.75);
+        }
     }
 }
 .tp-hero-title .tp-hero-typed{
