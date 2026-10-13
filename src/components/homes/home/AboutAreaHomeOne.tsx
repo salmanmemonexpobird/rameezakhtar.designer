@@ -18,21 +18,25 @@ type DataType = {
 
 const about_content: DataType = {
   subtitle: "About Me",
-  about_des: <>Hello! I'm <span>Rameez Akhtar</span>, a self-taught & award-winning <span>Graphic Designer</span> with over <span>fifteen years of work experience</span>. I started in my children&apos;s room and grew into working with renowned<span> creative</span> agencies and brands.</>,
+  about_des: <>
+    Hello! I&apos;m <span>Rameez Akhtar</span>, a passionate and creative <span>Senior Creative Designer</span> with over <span>3 years of experience</span> in crafting impactful visual experiences.
+    <br /><br />
+    I specialize in <span>social media design, brand identity, digital campaigns, and creative advertising</span>. I&apos;ve had the opportunity to work with renowned brands, transforming creative ideas into visually compelling designs that connect with audiences and deliver results.
+  </>,
   counter_data: [
     {
       id: 1,
-      count: 180,
-      text: "Project Delivered",
+      count: 100,
+      text: "Projects",
     },
     {
       id: 2,
-      count: 13,
+      count: 3,
       text: "Years of Experience",
     },
     {
       id: 3,
-      count: 40,
+      count: 25,
       text: "Happy Clients",
     }
   ],

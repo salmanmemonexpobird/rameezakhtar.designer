@@ -29,10 +29,23 @@
         background: rgba($color: #FAFAFA, $alpha: .08);
         border: 1px solid rgba($color: $white, $alpha: .09);
         border-radius: 100px 0px 100px 100px;
-        margin-bottom: 22px;
+        margin: 0 auto 22px;
         @media #{$xs}{
             width: 140px;
             height: 170px;
+        }
+
+        &--icon-only{
+            & .tp-skill-icon{
+                padding-top: 0;
+                margin-bottom: 0;
+
+                & img{
+                    width: 64px;
+                    height: 64px;
+                    object-fit: contain;
+                }
+            }
         }
     }
     &-icon{

@@ -18,8 +18,8 @@ interface DataType {
 }
 
 const footer_content: DataType = {
-  title: "Open to full-time opportunities. Let's build something great together.",
-  title_2: <>Open to full-time opportunities. <br /> Let&apos;s build something great.</>,
+  title: "Let's Turn Bold Ideas Into Powerful Visuals.",
+  title_2: <>Let&apos;s Turn Bold Ideas <br /> Into Powerful Visuals.</>,
   footer_data: [
     {
       id: 1,
@@ -46,6 +46,7 @@ const { title_2, footer_data } = footer_content
 
 const FooterOne = ({ style }: any) => {
   const bg_img = style ? "/assets/img/footer/overly-bg-2.png" : "/assets/img/skill/bg-distort.png";
+  const showFooterCta = true;
 
 
 
@@ -65,7 +66,7 @@ const FooterOne = ({ style }: any) => {
           <div className="tp-footer-circle-3" data-speed=".7">
             <span></span>
           </div>
-          <div className={`tp-footer-area ${style ? "tp-footer-inner__customize" : ""} pb-80 pt-120`}>
+          {showFooterCta && <div className={`tp-footer-area ${style ? "tp-footer-inner__customize" : ""} pb-80 pt-120`}>
             <div className="container">
               <div className="row">
                 <div className="col-xl-12">
@@ -95,7 +96,7 @@ const FooterOne = ({ style }: any) => {
                 ))}
               </div>
             </div>
-          </div>
+          </div>}
 
           <div className="tp-copyright-area pb-20">
             <div className="container">

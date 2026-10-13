@@ -2,9 +2,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-import shape_1 from "@/assets/img/services/shape/services-shape-1.png";
-import shape_2 from "@/assets/img/services/shape/services-shape-2.png";
-
 import tool_photoshop from "@/assets/img/hero/shape/hero-photoshop-3d.png";
 import tool_illustrator from "@/assets/img/hero/shape/hero-illustrator-3d.png";
 import tool_chatgpt from "@/assets/img/hero/shape/hero-chatgpt-3d.png";
@@ -45,17 +42,6 @@ const service_content: DataType = {
     {
       id: 2,
       tab_id: "Two",
-      question: "Design Systems",
-      answer: "I build consistent, reusable design systems so your brand looks and feels the same everywhere, and new designs can be produced faster without losing quality.",
-      some_features: [
-        "Colors, typography & components",
-        "Reusable UI kits",
-        "Brand & style guidelines",
-      ]
-    },
-    {
-      id: 3,
-      tab_id: "Three",
       question: "Website Pages Design",
       answer: "I design clean, modern website pages, from landing pages to full multi-page layouts, that look great on every screen and are built to turn visitors into customers.",
       some_features: [
@@ -65,8 +51,8 @@ const service_content: DataType = {
       ]
     },
     {
-      id: 4,
-      tab_id: "Four",
+      id: 3,
+      tab_id: "Three",
       question: "Branding",
       answer: "I create memorable brand identities that tell your story and stand out in the market, from your first logo to a complete visual identity.",
       some_features: [
@@ -76,8 +62,8 @@ const service_content: DataType = {
       ]
     },
     {
-      id: 5,
-      tab_id: "Five",
+      id: 4,
+      tab_id: "Four",
       question: "Campaigns",
       answer: "I design eye-catching campaign creatives that get attention and drive results, keeping the message and look consistent across every platform.",
       some_features: [
@@ -98,10 +84,6 @@ const design_tools = [
   tool_capcut,
   tool_gemini,
   tool_freepik,
-  tool_photoshop,
-  tool_illustrator,
-  tool_chatgpt,
-  tool_gemini,
 ];
 
 
@@ -147,16 +129,6 @@ const ServiceAreaHomeOne = () => {
                         </span>
                       </p>
                     ))}
-                    <p data-tp-throwable-el="">
-                      <span className="">
-                        <Image src={shape_1} alt="brand-img" />
-                      </span>
-                    </p>
-                    <p data-tp-throwable-el="">
-                      <span className="">
-                        <Image src={shape_2} alt="brand-img" />
-                      </span>
-                    </p>
                   </div>
 
                 </div>

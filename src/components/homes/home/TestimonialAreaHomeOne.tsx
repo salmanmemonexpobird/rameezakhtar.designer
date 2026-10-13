@@ -35,52 +35,32 @@ const testimonial_content: DataType = {
     {
       id: 1,
       rating_text: "5.0 Rating",
-      description: `"Rameez completely transformed our brand identity. The new logo and packaging feel premium and our customers noticed the difference right away. Delivered on time and very easy to work with."`,
+      description: `"Rameez has an excellent eye for design and branding. He transformed our ideas into a clean, modern, and professional visual identity that perfectly reflects our brand's personality. Great creativity and attention to detail!"`,
     },
     {
       id: 2,
       rating_text: "5.0 Rating",
-      description: `"From social media creatives to our website graphics, Rameez understands exactly what we want. His designs are clean, modern and always ready before the deadline."`,
+      description: `"Working with Rameez was a great experience. His social media designs were creative, engaging, and perfectly aligned with our brand. He consistently delivered high-quality work with fresh ideas."`,
     },
     {
       id: 3,
       rating_text: "5.0 Rating",
-      description: `"We needed brochures and project branding that could stand out in a competitive market. Rameez delivered beyond expectations, and our sales team loves using his designs."`,
-    },
-    {
-      id: 4,
-      rating_text: "5.0 Rating",
-      description: `"Very professional and creative. He took our rough ideas and turned them into a polished brand look. Communication was smooth throughout the project."`,
-    },
-    {
-      id: 5,
-      rating_text: "5.0 Rating",
-      description: `"Rameez gave our brand a fresh, consistent look across every platform. Highly recommended for any business that wants quality graphic design."`,
+      description: `"Highly impressed with Rameez's creativity and design skills. He understands brand aesthetics, pays attention to the smallest details, and consistently produces premium-quality designs."`,
     },
   ],
   testimonial_nav_data: [
     {
       id: 1,
-      designation: "Marketing Head",
-      company: "Ceries Derma",
-    },
-    {
-      id: 2,
-      designation: "Founder",
-      company: "Westpoint.pk",
-    },
-    {
-      id: 3,
       designation: "Director",
       company: "Memon Builders",
     },
     {
-      id: 4,
+      id: 2,
       designation: "Brand Manager",
       company: "Happy House",
     },
     {
-      id: 5,
+      id: 3,
       designation: "CEO",
       company: "GoWestpoint",
     },
@@ -94,6 +74,9 @@ const { subtitle, title, info, testimonial_slider_data, testimonial_nav_data } =
 const slider_a = {
   dots: false,
   arrows: false,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  pauseOnHover: true,
   slidesToShow: 1,
   slidesToScroll: 1,
 };
@@ -215,7 +198,7 @@ const TestimonialAreaHomeOne = ({ style }: any) => {
 
 
 
-                <div className="tp-testimonial-thumb-slider">
+                <div className="tp-testimonial-thumb-slider d-none">
 
                   <Slider
                     {...slider_b}

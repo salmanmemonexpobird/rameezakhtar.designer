@@ -31,7 +31,7 @@ const hero_content: DataType = {
   ],
   sub_title: "Hello There!",
   title_1: "I am Rameez",
-  words: ["UX", "Design System", "Website Pages", "Branding", "Campaign"],
+  words: ["Social Media Creative", "Ads", "Campaign", "Brand", "Logo"],
   title_2: "designer",
   sm_info: <>Graphic designer helping brands stand out <br /> with thoughtful UX, branding and campaigns.</>,
   btn_text: <>Get <br /> In Touch</>,
@@ -114,7 +114,7 @@ const HeroAreaHome = () => {
                   <span className="singleLine">{sub_title} <Image src={HeroHand} alt="waving-hand" /></span>
                   <h3 className="tp-hero-title">
                     <span className="tp-hero-title-line">{title_1}</span>
-                    <span className="tp-hero-typed-line">
+                    <span className={`tp-hero-typed-line${typed.length > 14 ? ' is-long' : ''}`}>
                       <span className="tp-hero-typed">{typed || '​'}</span>
                       <span className="tp-hero-typed-cursor"></span>
                     </span>
